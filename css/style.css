@@ -401,7 +401,7 @@ z-index: 0;
     }
 
     #home ul {
-        left: 0%;
+        left: -5%;
     }
 #home-content > div.home-content > div{
 transform: translateY(-35%);
@@ -412,6 +412,9 @@ transform: translateY(-35%);
 
     #home-img img {
         width: 60%;
+    }
+    #home ul {
+        left: -3%;
     }
 
 }
