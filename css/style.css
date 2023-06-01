@@ -30,26 +30,11 @@
 
 
 /* ====== basics =============================== */
-body {
-    width: 80%;
-    margin: auto;
 
-}
 body >div{
     overflow: hidden;
 }
 
-@media screen and (max-width:768px) {
-
-    body,
-    nav {
-        width: 90%;
-    overflow-x: hidden;
-        
-    }
-   
-
-}
 
 
 body {
@@ -98,13 +83,15 @@ nav {
     justify-content: space-between;
     column-gap: 3rem;
     align-items: center;
-    padding: 0.5rem 10rem;
+    /* padding: 0.5rem 10rem; */
+    padding: 0.5rem 1rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     background-color: transparent;
     z-index: 100;
+    position:relative;
 
 }
 
@@ -136,7 +123,6 @@ nav .nav-sec {
 nav ul#nav-menu a {
     transition: all 0.5s;
 }
-
 nav ul#nav-menu a:hover {
     color: var(--first-color);
 }
@@ -179,36 +165,26 @@ nav ul#nav-menu a:hover {
 
 }
 
-@media screen and (min-width:200px) and (max-width:500px) {
-   
-    nav {
-        padding-inline: 0  !important;
-        width: 200px;
-        column-gap: 0rem;
-        /* font-size: 1rem; */
 
-    }
-    nav .nav-sec{
-        column-gap: 0.7rem;
-    }
-    #logo{
-        font-size: 1rem;
-    }
-    nav ul#nav-menu{
-        column-gap: 0.5rem;
-    }
-   
- 
-}
 @media screen and (max-width:550px) {
-     nav{
+     /* nav{
         padding-inline: 2rem !important;
-    }
+    } */
 #nav-icons {
     position: relative;
-    left: -25%;
+    /* left: -50%; */
+    /* transform:translateX(0%) */
 
 }
+nav ul#nav-menu{
+    display:none;
+
+}
+#logo{
+    font-size: 1rem;
+}
+
+
 }
 
 @media screen and (min-width:500px) and (max-width:992px) {
@@ -234,6 +210,7 @@ nav ul#nav-menu a:hover {
 #home {
     position: relative;
     overflow: hidden;
+    padding:5rem;
 }
 
 #home-content {
@@ -348,7 +325,7 @@ cursor: pointer;
     z-index: 102;
     transition: all 1s;
 }
-@media screen and (min-width:200px) and (max-width:500px) {
+@media screen and (max-width:550px) {
     #home{
         padding-block: 3rem;
     }
@@ -368,13 +345,7 @@ z-index: 0;
     
 }
 
-@media screen and (max-width:500px)  {
-    #home ul {
-        display: none;
-    }
-}
-
-@media screen and (min-width:500px) and (max-width:768px) {
+@media screen and (min-width:550px) and (max-width:768px) {
     #home {
         height: auto;
     }
@@ -389,7 +360,7 @@ z-index: 0;
 
     #home ul {
         top: 0%;
-        transform: rotate(-90deg) translateX(-90%) translateY(50%);
+        transform: rotate(-90deg) translateX(-90%) translateY(180%);
 
     }
    
@@ -398,7 +369,7 @@ z-index: 0;
 
 @media screen and (min-width:769px) and (max-width:992px) {
     #home ul {
-        left: -10%;
+        left: 0%;
         top:30%;
     }
     #home-content {
@@ -423,9 +394,6 @@ z-index: 0;
         width: 600px;
         height: 100vh;
         transform: translateY(-21%);
-
-
-
     }
 
     #home-img img {
@@ -433,14 +401,20 @@ z-index: 0;
     }
 
     #home ul {
-        left: -7%;
+        left: 0%;
     }
 #home-content > div.home-content > div{
 transform: translateY(-35%);
 
 }
 }
+@media screen and (min-width:1200px) and (max-width:1550px) {
 
+    #home-img img {
+        width: 60%;
+    }
+
+}
 
 /* ========================================================= */
 
@@ -579,7 +553,7 @@ span,
     align-items: center;
 }
 
-@media screen and (max-width:800px) {
+/* @media screen and (max-width:800px) {
     #cart {
         width: 250px;
     }
@@ -588,18 +562,22 @@ span,
         font-size: 0.9rem;
     }
 
-}
+} */
 
 /* ========== end cart section ===================================================== */
 
 
 /* ============= start FEATURED section ==================================== */
+#featured{
+    padding:5rem;
+}
 .featured-content {
     display: flex;
     column-gap: 1rem;
     margin: auto;
     justify-content: center;
     align-items: center;
+    
 }
 .product-box {
     border: 1px solid var(--border-color);
@@ -674,14 +652,7 @@ small {
     margin-bottom: 1rem;
 }
 
-@media screen and (min-width:200px) and (max-width:300px) {
-    #featured .sale-flag{
-        font-size: .5rem;
-        padding: 0.2rem 0.5rem;
-        top:0.5rem
-    }
 
-}
 @media screen and (max-width:600px) {
     #featured .sale-flag{
         font-size: 1rem;
@@ -689,11 +660,19 @@ small {
     }
 .featured-content {
 flex-wrap: wrap;
-row-gap: 1rem;
+row-gap:1rem;
+flex-direction: row;
 margin: auto;
 width: 75%;
 }
-    
+    .product-box{
+        width:40%;
+    }
+   
+    featured-content .count-icons i,
+    small {
+        padding: 0.2rem ;
+    }
 }
 
 
@@ -710,6 +689,9 @@ width: 75%;
 /* ============================================ */
 
 /* ===== start our story section ===================================== */
+#our-story{
+    padding:5rem;
+}
 #our-story>div[id='our-story-content'] {
     display: flex;
     column-gap: 5rem;
@@ -784,7 +766,7 @@ width: 75%;
     }
 
 }
-@media screen and (min-width:500px) and (max-width:768px) {
+@media screen and  (max-width:768px) {
     #our-story{
         width: 80%;
         margin: auto;
@@ -887,7 +869,7 @@ width: 75%;
 
 /* ===== start testimonial section ================================== */
 #testimonial {
-    padding-block: 5rem;
+    padding: 5rem;
     position: relative;
 }
 
@@ -900,10 +882,10 @@ width: 75%;
     padding: 0.5rem;
     border-radius: 5px;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10%;
 }
 #testimonial > div:nth-child(2){
     display: flex;
@@ -1016,7 +998,7 @@ padding: 20px;
     
 }
 
-@media screen and (min-width:500px) and (max-width:992px) {
+@media screen and (max-width:992px) {
 
     .testimonial-content {
         flex-direction: column-reverse;
@@ -1094,7 +1076,7 @@ margin: auto;
 
 /* ======== start new arrivals section ================================================== */
 #new {
-    padding-block: 5rem;
+    padding: 5rem;
 }
 
 .new-container {
@@ -1223,7 +1205,7 @@ flex-wrap: wrap;
 
 /* ==== start contact section ============================================= */
 #contact {
-    padding-block: 5rem;
+    padding: 5rem;
     text-align: start;
 }
 
@@ -1343,7 +1325,7 @@ transform: translateX(0%)  translateY(100%);
 
 /* ======= start information section =============================== */
 #info {
-    padding-block: 5rem;
+    padding: 5rem;
     text-align: start;
 }
 
@@ -1388,7 +1370,7 @@ li {
     font-size: 1rem;
 }
 }
-@media screen and (min-width:500px) and (max-width:768px) {
+@media screen and (max-width:768px) {
     #info-container {
         flex-wrap: wrap;
         row-gap: 1rem;
